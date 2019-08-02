@@ -13,7 +13,7 @@ public class Quick {
     private static void sort(Comparable[] array, int lo, int hi) {
         int divideIndex = partition(a, lo, hi);
         sort(array, lo, divideIndex - 1);
-        sort(array, divideIndex + 1; hi);
+        sort(array, divideIndex + 1, hi);
     }
 
     private static int partition(Comparable[] array, int lo, int hi) {
