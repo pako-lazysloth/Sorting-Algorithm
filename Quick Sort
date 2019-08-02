@@ -1,0 +1,35 @@
+import java.lang.IllegalArgumentException;
+
+public class Quick {
+    public static void sort throws IllegalArgumentException(Comparable[] array) {
+        if(array == null || array.length == 0) {
+            throw new IllegalArgumentException();
+        } else {
+            StdRandom.shuffle(array);
+            sort(array, 0, array.length - 1);
+        }
+    }
+
+    private static void sort(Comparable[] array, int lo, int hi) {
+        int divideIndex = partition(a, lo, hi);
+        sort(array, lo, divideIndex - 1);
+        sort(array, divideIndex + 1; hi);
+    }
+
+    private static int partition(Comparable[] array, int lo, int hi) {
+        int LIndex = lo + 1;
+        int RIndex = hi;
+        Comparable temp = array[lo];
+        while(LIndex < RIndex) {
+            while(less(array[LIndex], temp) && LIndex < RIndex) {
+                LIndex += 1;
+            }
+            while(less(array[RIndex], temp) && LIndex < RIndex) {
+                RIndex -= 1;
+            }
+            exch(array, LIndex, RIndex);
+        }
+        exch(array, lo, RIndex);
+        return RIndex;
+    }
+}
